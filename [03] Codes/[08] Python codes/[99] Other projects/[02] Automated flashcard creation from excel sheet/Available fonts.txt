@@ -1,0 +1,381 @@
+C:\Windows\Fonts\times.ttf
+C:\Windows\Fonts\GIGI.TTF
+C:\Windows\Fonts\ERASBD.TTF
+C:\Windows\Fonts\FRADMCN.TTF
+C:\Windows\Fonts\constani.ttf
+C:\Windows\Fonts\YuGothR.ttc
+C:\Windows\Fonts\timesbd.ttf
+C:\Windows\Fonts\simsunb.ttf
+C:\Windows\Fonts\msjhbd.ttc
+C:\Windows\Fonts\TEMPSITC.TTF
+C:\Windows\Fonts\ONYX.TTF
+C:\Windows\Fonts\Shonarb.ttf
+C:\Windows\Fonts\FRSCRIPT.TTF
+C:\Windows\Fonts\SHOWG.TTF
+C:\Windows\Fonts\LFAXDI.TTF
+C:\Windows\Fonts\segoeuib.ttf
+C:\Windows\Fonts\SCHLBKB.TTF
+C:\Windows\Fonts\Candarali.ttf
+C:\Windows\Fonts\GILSANUB.TTF
+C:\Windows\Fonts\BOD_CBI.TTF
+C:\Windows\Fonts\framd.ttf
+C:\Windows\Fonts\CALISTI.TTF
+C:\Windows\Fonts\IMPRISHA.TTF
+C:\Windows\Fonts\BKANT.TTF
+C:\Windows\Fonts\BOD_B.TTF
+C:\Windows\Fonts\GOTHICBI.TTF
+C:\Windows\Fonts\verdanaz.ttf
+C:\Windows\Fonts\ENGR.TTF
+C:\Windows\Fonts\FRAMDCN.TTF
+C:\Windows\Fonts\comic.ttf
+C:\Windows\Fonts\BRITANIC.TTF
+C:\Windows\Fonts\LBRITEI.TTF
+C:\Windows\Fonts\VIVALDII.TTF
+C:\Windows\Fonts\simsun.ttc
+C:\Windows\Fonts\msyh.ttc
+C:\Windows\Fonts\YuGothM.ttc
+C:\Windows\Fonts\TCM_____.TTF
+C:\Windows\Fonts\ntailu.ttf
+C:\Windows\Fonts\BOD_BLAR.TTF
+C:\Windows\Fonts\seguibli.ttf
+C:\Windows\Fonts\constanz.ttf
+C:\Windows\Fonts\LATINWD.TTF
+C:\Windows\Fonts\corbell.ttf
+C:\Windows\Fonts\segoeuii.ttf
+C:\Windows\Fonts\LTYPEBO.TTF
+C:\Windows\Fonts\CENTURY.TTF
+C:\Windows\Fonts\WINGDNG2.TTF
+C:\Windows\Fonts\segoeui.ttf
+C:\Windows\Fonts\TCMI____.TTF
+C:\Windows\Fonts\CENTAUR.TTF
+C:\Windows\Fonts\LBRITEDI.TTF
+C:\Windows\Fonts\BOOKOSI.TTF
+C:\Windows\Fonts\msyhl.ttc
+C:\Windows\Fonts\seguiemj.ttf
+C:\Windows\Fonts\ROCKB.TTF
+C:\Windows\Fonts\COPRGTB.TTF
+C:\Windows\Fonts\calibril.ttf
+C:\Windows\Fonts\Shonar.ttf
+C:\Windows\Fonts\MATURASC.TTF
+C:\Windows\Fonts\tahoma.ttf
+C:\Windows\Fonts\ITCKRIST.TTF
+C:\Windows\Fonts\arialbd.ttf
+C:\Windows\Fonts\ARIALNB.TTF
+C:\Windows\Fonts\arial.ttf
+C:\Windows\Fonts\HARNGTON.TTF
+C:\Windows\Fonts\SitkaVF-Italic.ttf
+C:\Windows\Fonts\ERASMD.TTF
+C:\Windows\Fonts\ANTQUAI.TTF
+C:\Windows\Fonts\LTYPE.TTF
+C:\Windows\Fonts\msyi.ttf
+C:\Windows\Fonts\FRABK.TTF
+C:\Windows\Fonts\mmrtext.ttf
+C:\Windows\Fonts\HATTEN.TTF
+C:\Windows\Fonts\verdana.ttf
+C:\Windows\Fonts\LFAXD.TTF
+C:\Windows\Fonts\STENCIL.TTF
+C:\Windows\Fonts\GOTHICI.TTF
+C:\Windows\Fonts\COLONNA.TTF
+C:\Windows\Fonts\OUTLOOK.TTF
+C:\Windows\Fonts\ROCK.TTF
+C:\Windows\Fonts\kalpurush ANSI.ttf
+C:\Windows\Fonts\PERI____.TTF
+C:\Windows\Fonts\RAGE.TTF
+C:\Windows\Fonts\HTOWERT.TTF
+C:\Windows\Fonts\PERTILI.TTF
+C:\Windows\Fonts\ITCEDSCR.TTF
+C:\Windows\Fonts\tahomabd.ttf
+C:\Windows\Fonts\PARCHM.TTF
+C:\Windows\Fonts\CALISTBI.TTF
+C:\Windows\Fonts\GILC____.TTF
+C:\Windows\Fonts\GILI____.TTF
+C:\Windows\Fonts\REFSAN.TTF
+C:\Windows\Fonts\taile.ttf
+C:\Windows\Fonts\FTLTLT.TTF
+C:\Windows\Fonts\mingliub.ttc
+C:\Windows\Fonts\LSANSDI.TTF
+C:\Windows\Fonts\PAPYRUS.TTF
+C:\Windows\Fonts\PERTIBD.TTF
+C:\Windows\Fonts\ROCKBI.TTF
+C:\Windows\Fonts\BOOKOSB.TTF
+C:\Windows\Fonts\LTYPEB.TTF
+C:\Windows\Fonts\GOTHICB.TTF
+C:\Windows\Fonts\segoescb.ttf
+C:\Windows\Fonts\GLSNECB.TTF
+C:\Windows\Fonts\ariblk.ttf
+C:\Windows\Fonts\PRISTINA.TTF
+C:\Windows\Fonts\GOUDOSB.TTF
+C:\Windows\Fonts\couri.ttf
+C:\Windows\Fonts\corbelli.ttf
+C:\Windows\Fonts\ebrimabd.ttf
+C:\Windows\Fonts\ntailub.ttf
+C:\Windows\Fonts\calibrili.ttf
+C:\Windows\Fonts\segoepr.ttf
+C:\Windows\Fonts\SitkaVF.ttf
+C:\Windows\Fonts\ARIALN.TTF
+C:\Windows\Fonts\l_10646.ttf
+C:\Windows\Fonts\PERBI___.TTF
+C:\Windows\Fonts\taileb.ttf
+C:\Windows\Fonts\LeelawUI.ttf
+C:\Windows\Fonts\consolai.ttf
+C:\Windows\Fonts\HARLOWSI.TTF
+C:\Windows\Fonts\BOD_CI.TTF
+C:\Windows\Fonts\POORICH.TTF
+C:\Windows\Fonts\corbelb.ttf
+C:\Windows\Fonts\constan.ttf
+C:\Windows\Fonts\TCB_____.TTF
+C:\Windows\Fonts\CURLZ___.TTF
+C:\Windows\Fonts\FELIXTI.TTF
+C:\Windows\Fonts\constanb.ttf
+C:\Windows\Fonts\ELEPHNTI.TTF
+C:\Windows\Fonts\georgia.ttf
+C:\Windows\Fonts\GOUDOS.TTF
+C:\Windows\Fonts\comicz.ttf
+C:\Windows\Fonts\BOD_BLAI.TTF
+C:\Windows\Fonts\BERNHC.TTF
+C:\Windows\Fonts\cambria.ttc
+C:\Windows\Fonts\FRADMIT.TTF
+C:\Windows\Fonts\ariali.ttf
+C:\Windows\Fonts\consola.ttf
+C:\Windows\Fonts\seguisli.ttf
+C:\Windows\Fonts\comicbd.ttf
+C:\Windows\Fonts\consolaz.ttf
+C:\Windows\Fonts\ebrima.ttf
+C:\Windows\Fonts\MOD20.TTF
+C:\Windows\Fonts\JOKERMAN.TTF
+C:\Windows\Fonts\verdanai.ttf
+C:\Windows\Fonts\SimsunExtG.ttf
+C:\Windows\Fonts\RAVIE.TTF
+C:\Windows\Fonts\timesbi.ttf
+C:\Windows\Fonts\JUICE___.TTF
+C:\Windows\Fonts\SCHLBKI.TTF
+C:\Windows\Fonts\ALGER.TTF
+C:\Windows\Fonts\COPRGTL.TTF
+C:\Windows\Fonts\georgiaz.ttf
+C:\Windows\Fonts\BELL.TTF
+C:\Windows\Fonts\ROCKEB.TTF
+C:\Windows\Fonts\CALISTB.TTF
+C:\Windows\Fonts\comici.ttf
+C:\Windows\Fonts\gadugi.ttf
+C:\Windows\Fonts\seguihis.ttf
+C:\Windows\Fonts\Inkfree.ttf
+C:\Windows\Fonts\segoeuiz.ttf
+C:\Windows\Fonts\GARA.TTF
+C:\Windows\Fonts\Candaral.ttf
+C:\Windows\Fonts\LFAX.TTF
+C:\Windows\Fonts\BOD_I.TTF
+C:\Windows\Fonts\micross.ttf
+C:\Windows\Fonts\GLECB.TTF
+C:\Windows\Fonts\mmrtextb.ttf
+C:\Windows\Fonts\segoesc.ttf
+C:\Windows\Fonts\MAGNETOB.TTF
+C:\Windows\Fonts\COOPBL.TTF
+C:\Windows\Fonts\ARIALNBI.TTF
+C:\Windows\Fonts\GOUDOSI.TTF
+C:\Windows\Fonts\CALIFB.TTF
+C:\Windows\Fonts\Gabriola.ttf
+C:\Windows\Fonts\courbi.ttf
+C:\Windows\Fonts\vrinda.ttf
+C:\Windows\Fonts\calibrib.ttf
+C:\Windows\Fonts\bahnschrift.ttf
+C:\Windows\Fonts\seguili.ttf
+C:\Windows\Fonts\BRLNSR.TTF
+C:\Windows\Fonts\PLAYBILL.TTF
+C:\Windows\Fonts\KUNSTLER.TTF
+C:\Windows\Fonts\trebucbd.ttf
+C:\Windows\Fonts\BROADW.TTF
+C:\Windows\Fonts\AGENCYR.TTF
+C:\Windows\Fonts\ELEPHNT.TTF
+C:\Windows\Fonts\PER_____.TTF
+C:\Windows\Fonts\SegoeIcons.ttf
+C:\Windows\Fonts\GARABD.TTF
+C:\Windows\Fonts\vrindab.ttf
+C:\Windows\Fonts\malgunbd.ttf
+C:\Windows\Fonts\Siyam Rupali ANSI.ttf
+C:\Windows\Fonts\Candara.ttf
+C:\Windows\Fonts\ARIALNI.TTF
+C:\Windows\Fonts\sylfaen.ttf
+C:\Windows\Fonts\Candarai.ttf
+C:\Windows\Fonts\GILBI___.TTF
+C:\Windows\Fonts\gadugib.ttf
+C:\Windows\Fonts\BASKVILL.TTF
+C:\Windows\Fonts\REFSPCL.TTF
+C:\Windows\Fonts\FRAHV.TTF
+C:\Windows\Fonts\segoeuil.ttf
+C:\Windows\Fonts\LTYPEO.TTF
+C:\Windows\Fonts\WINGDNG3.TTF
+C:\Windows\Fonts\Candarab.ttf
+C:\Windows\Fonts\himalaya.ttf
+C:\Windows\Fonts\trebucit.ttf
+C:\Windows\Fonts\BRADHITC.TTF
+C:\Windows\Fonts\CALIFI.TTF
+C:\Windows\Fonts\BOD_BI.TTF
+C:\Windows\Fonts\TCCB____.TTF
+C:\Windows\Fonts\GIL_____.TTF
+C:\Windows\Fonts\phagspab.ttf
+C:\Windows\Fonts\seguisym.ttf
+C:\Windows\Fonts\FORTE.TTF
+C:\Windows\Fonts\LSANSI.TTF
+C:\Windows\Fonts\MAIAN.TTF
+C:\Windows\Fonts\BOD_R.TTF
+C:\Windows\Fonts\calibri.ttf
+C:\Windows\Fonts\CENSCBK.TTF
+C:\Windows\Fonts\mvboli.ttf
+C:\Windows\Fonts\FRAHVIT.TTF
+C:\Windows\Fonts\TCCEB.TTF
+C:\Windows\Fonts\LeelaUIb.ttf
+C:\Windows\Fonts\corbeli.ttf
+C:\Windows\Fonts\ROCCB___.TTF
+C:\Windows\Fonts\CALIST.TTF
+C:\Windows\Fonts\BOD_CR.TTF
+C:\Windows\Fonts\MISTRAL.TTF
+C:\Windows\Fonts\georgiai.ttf
+C:\Windows\Fonts\FRABKIT.TTF
+C:\Windows\Fonts\lucon.ttf
+C:\Windows\Fonts\LBRITE.TTF
+C:\Windows\Fonts\MTEXTRA.TTF
+C:\Windows\Fonts\SegUIVar.ttf
+C:\Windows\Fonts\BOD_CB.TTF
+C:\Windows\Fonts\YuGothB.ttc
+C:\Windows\Fonts\TCCM____.TTF
+C:\Windows\Fonts\cambriai.ttf
+C:\Windows\Fonts\OLDENGL.TTF
+C:\Windows\Fonts\calibriz.ttf
+C:\Windows\Fonts\seguisbi.ttf
+C:\Windows\Fonts\FREESCPT.TTF
+C:\Windows\Fonts\symbol.ttf
+C:\Windows\Fonts\phagspa.ttf
+C:\Windows\Fonts\cour.ttf
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py"
+Index(['Word ', 'Definition ', 'Example sentence 1'], dtype='object')
+Traceback (most recent call last):
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py", line 25, in <module>
+    font1 = ImageFont.truetype(font_path1, size = 100)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\tempCodeRunnerFile.py"
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\tempCodeRunnerFile.py", line 1
+    C:\Windows\Fonts\CENTURY.TTF
+                               ^
+SyntaxError: unexpected character after line continuation character
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\tempCodeRunnerFile.py"
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\tempCodeRunnerFile.py", line 1
+    C:\Windows\Fonts\CENTURY.TTF
+                               ^
+SyntaxError: unexpected character after line continuation character
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py"
+Index(['Word ', 'Definition ', 'Example sentence 1'], dtype='object')
+Traceback (most recent call last):
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py", line 22, in <module>
+    font = ImageFont.truetype(font_path, size=250)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+eation from excel sheet\Flashcard Front gnerator.py"
+Index(['Word ', 'Definition ', 'Example sentence 1'], dtype='object')
+Traceback (most recent call last):
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py", line 22, in <module>
+    font = ImageFont.truetype(font_path, size=250)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+Traceback (most recent call last):
+  File "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py", line 22, in <module>
+    font = ImageFont.truetype(font_path, size=250)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+y", line 22, in <module>
+    font = ImageFont.truetype(font_path, size=250)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+    font = ImageFont.truetype(font_path, size=250)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 834, in truetype
+    return freetype(font)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 831, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "C:\Users\islam\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\ImageFont.py", line 257, in __init__
+    self.font = core.getfont(
+OSError: cannot open resource
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Flashcard Front gnerator.py"
+Index(['Word ', 'Definition ', 'Example sentence 1'], dtype='object')
+PS C:\WINDOWS\System32\WindowsPowerShell\v1.0> python -u "d:\[03] Codes\[08] Python codes\[99] Other projects\[02] Automated flashcard creation from excel sheet\Experimental.py"
+C:\Windows\Fonts\Siyamrupali.ttf
+C:\Windows\Fonts\comicz.ttf
+C:\Windows\Fonts\ROCC____.TTF
+C:\Windows\Fonts\TCCB____.TTF
+C:\Windows\Fonts\BOD_BI.TTF
+C:\Windows\Fonts\calibrib.ttf
+C:\Windows\Fonts\seguibl.ttf
+C:\Windows\Fonts\BOOKOSB.TTF
+C:\Windows\Fonts\kalpurush ANSI.ttf
+C:\Windows\Fonts\FRAHV.TTF
+C:\Windows\Fonts\ERASDEMI.TTF
+C:\Windows\Fonts\trebucbi.ttf
+C:\Windows\Fonts\Candara.ttf
+C:\Windows\Fonts\l_10646.ttf
+C:\Windows\Fonts\symbol.ttf
+C:\Windows\Fonts\calibrili.ttf
+C:\Windows\Fonts\Candarali.ttf
+C:\Windows\Fonts\CASTELAR.TTF
+C:\Windows\Fonts\YuGothB.ttc
+C:\Windows\Fonts\ntailu.ttf
+C:\Windows\Fonts\phagspab.ttf
+C:\Windows\Fonts\couri.ttf
+C:\Windows\Fonts\sylfaen.ttf
+C:\Windows\Fonts\CENSCBK.TTF
+C:\Windows\Fonts\segoeuib.ttf
+C:\Windows\Fonts\JUICE___.TTF
+C:\Windows\Fonts\seguili.ttf
+C:\Windows\Fonts\malgunsl.ttf
+C:\Windows\Fonts\BASKVILL.TTF
+C:\Windows\Fonts\COLONNA.TTF
+C:\Windows\Fonts\IMPRISHA.TTF
+C:\Windows\Fonts\ANTQUAB.TTF
+C:\Windows\Fonts\GARABD.TTF
+C:\Windows\Fonts\segoepr.ttf
+C:\Windows\Fonts\COOPBL.TTF
+C:\Windows\Fonts\ENGR.TTF
+C:\Windows\Fonts\consolaz.ttf
+C:\Windows\Fonts\GILI____.TTF
+C:\Windows\Fonts\ROCKEB.TTF
+C:\Windows\Fonts\BELLB.TTF
+C:\Windows\Fonts\LBRITED.TTF
+C:\Windows\Fonts\TCCM____.TTF
+C:\Windows\Fonts\ROCCB___.TTF
+C:\Windows\Fonts\ELEPHNTI.TTF
+C:\Windows\Fonts\SCHLBKB.TTF
+C:\Windows\Fonts\SansSerifCollection.ttf
+C:\Windows\Fonts\MISTRAL.TTF
+C:\Windows\Fonts\MAIAN.TTF
+C:\Windows\Fonts\corbelz.ttf
+C:\Windows\Fonts\calibrii.ttf
+C:\Windows\Fonts\CENTURY.TTF
+C:\Windows\Fonts\BRADHITC.TTF
+C:\Windows\Fonts\WINGDNG2.TTF
+C:\Windows\Fonts\TCCEB.TTF
+C:\Windows\Fonts\BROADW.TTF
+C:\Windows\Fonts\msjh.ttc
+C:\Windows\Fonts\INFROMAN.TTF
+C:\Windows\Fonts\OUTLOOK.TTF
+C:\Windows\Fonts\ANTQUAI.TTF
+C:\Windows\Fonts\webdings.ttf
+C:\Windows\Fonts\TCBI____.TTF
+C:\Windows\Fonts\LSANSDI.TTF
+C:\Windows\Fonts\PERTILI.TTF
+C:\Windows\Fonts\LTYPEBO.TTF
+C:\Windows\Fonts\trebuc.ttf
+C:\Windows\Fonts\CALISTBI.TTF
+C:\Windows\Fonts\RAGE.TTF
+C:\Windows\Fonts\BKANT.TTF
+C:\Windows\Fonts\SCHLBKBI.TTF
+C:\Windows\Fonts\BOD_CBI.TTF
+C:\Windows\Fonts\BOD_CB.TTF
+C:\Windows\Fonts\GOTHICI.TTF
+C:\Windows\Fonts\simsunb.ttf
+C:\Windows\Fonts\FRAHVIT.TTF
+C:\Windows\Fonts\msyhbd.ttc
+C:\Windows\Fonts\ROCKI.TTF
+C:\Windows\Fonts\GILSANUB.TTF
