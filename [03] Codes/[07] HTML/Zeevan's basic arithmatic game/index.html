@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stye.css">
+</head>
+<body>
+    <!-- <div id="progress"></div> || This did not work accordingly. -->
+    <button onclick="start()" id="d">O</button>
+    <div class="body">
+        <div class="first_number">
+            <span id="fn">00</span>
+        </div>
+        <div class="statement">
+            <p>+</p>
+        </div>
+        <div class="last_number">
+            <span id="ln">00</span>
+        </div>
+        <div class="options">
+            <ul>
+                <li><button id="opa" onclick="chek(0)">00</button></li>
+                <li><button id="opb" onclick="chek(1)">00</button></li>
+                <li><button id="opc" onclick="chek(2)">00</button></li>
+                <li><button id="opd" onclick="chek(3)">00</button></li>
+            </ul>
+        </div>
+        <div class="score">
+            <span id="correct">0</span>
+            <span id="incorrect">0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

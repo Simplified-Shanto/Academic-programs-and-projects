@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    
+    
+    
+}
+.first_number {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(39, 1, 255);
+    text-align: center;
+    color: rgb(59, 59, 59);
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 25px;
+}
+.last_number {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(236, 142, 142);
+    color: #3b3b3b;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 25px;
+}
+.statement {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(182, 151, 151);
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+.options button {
+    padding: 10px 10px;
+    background-color: rgb(255, 202, 133);
+    border: none;
+    color: rgb(63, 63, 63);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    float: left;
+    margin: 10px;
+}
+.first_number span {
+    text-align: center;
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.last_number span {
+    text-align: center;
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.statement p {
+    text-align: center;
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.options ul{
+    list-style: none;
+}
+.options {
+    margin: auto;
+}
+button {
+    background-color: rgb(48, 48, 48);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+}
+.options button:hover {
+    background-color: rgb(255, 211, 153);
+    cursor: pointer;
+
+}
+.options button:active {
+    background-color: rgb(255, 185, 93);
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(59, 59, 59);
+    cursor: pointer;
+
+}
+.score {
+    display: flex;
+    height: 30px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+#correct {
+    color: rgb(38, 255, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-right: 25px;
+}
+#incorrect {
+    color: rgb(255, 80, 80);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-left: 25px;
+}
+/* #progress { || This also did not made its way to the features.
+    height: 10px;
+    width: 1vw;
+    background-color: rgb(231, 42, 42);
+    transition: 5s;
+} */
