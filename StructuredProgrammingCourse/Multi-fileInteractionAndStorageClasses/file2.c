@@ -1,0 +1,1 @@
+int neighbour = 4;  // Definition and initialization - memory is allocated here. 
