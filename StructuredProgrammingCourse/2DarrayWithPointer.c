@@ -4,75 +4,81 @@
 int main()
 {
     int r = 3, c = 2;
+    int *arr = malloc(r * c * sizeof(int)); // arr is the pointer to the first memory address in this contiguous set of memory addresses.
 
-    // Allocate contiguous block
-    int *arr = malloc(r * c * sizeof(int));
-    if (!arr)
-    {
-        printf("Memory allocation failed!\n");
-        return 1;
-    }
-
-    // Input
-    printf("Enter %d elements:\n", r * c);
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
         {
-            scanf("%d", (arr + i * c + j));
+            // scanf("%d", &arrPtr[c * i + j]); //Equally valid. arrPtr[c * i + j ] equivalent to *(arrPtr + c * i + j)
+            scanf("%d", (arr + i * r + j));
         }
     }
 
-    // Output
-    printf("Matrix elements:\n");
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
         {
-            printf("%d ", *(arr + i * c + j));
+            printf("%d ", *(arr + i * r + c));
         }
         printf("\n");
     }
-
-    free(arr);
-    return 0;
 }
 
-// #include<stdio.h>
-// #include<stdlib.h>
+
+
+
+
+
+// #include<stdio.h> 
+// #include<stdlib.h> 
 
 // int main()
 // {
-//     int r = 3, c = 2;
-//     int *arr = malloc(r*c*sizeof(int)); // arr is the pointer to the first memory address in this contiguous set of memory addresses.
+//     int row = 3, column = 2;
+//     int (*arrayOfPointers)[row];
+//     arrayOfPointers = malloc(column * sizeof(arrayOfPointers));
 
-//     for (int i = 0; i < r; i++)
+//     for (int i = 0; i < row; i++)
 //     {
-//         for (int j = 0; j < c; j++)
+//         for (int j = 0; j < column; j++)
 //         {
-//             scanf("%d", (arr + i*r + j));
+//             scanf("%d", (arrayOfPointers[i] + j)); 
 //         }
 //     }
 
-//         for (int i = 0; i < r; i++)
+//     for (int i = 0; i < row; i++)
 //     {
-//         for (int j = 0; j < c; j++)
+//         for (int j = 0; j < column; j++)
 //         {
-//             printf("%d ", *(arr + i*r + c));
+//             printf("%d ", *(arrayOfPointers[i] + j)); 
 //         }
-//         printf("\n");
+//         printf("\n"); 
 //     }
+//         return 0; 
 // }
 
-// // Implement 2D array with pointer to array approach
+
+
+
+
+
+
+
+
+
+
+
+// Implement 2D array with "Array of pointers" approach
 // #include<stdio.h>
 // #include<stdlib.h>
 
 // int main()
 // {
 //     int row = 3, column = 4;
-//     int (*x)[column];
+//     int (*x)[column]; // Array of pointers.Say  x is an  array of 4 pointers
 //     x = malloc(row * sizeof(*x));
+
 
 //     for (int i = 0; i< row; i++)
 //     {
@@ -92,6 +98,15 @@ int main()
 //     }
 //         return 0;
 // }
+
+
+
+
+
+
+
+
+
 
 // // Implement, populate and print a 2D array with double pointer approach
 // #include <stdio.h>

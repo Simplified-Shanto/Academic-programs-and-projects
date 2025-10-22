@@ -1,3 +1,5 @@
+// Note that, key challenge in this problem is to form the multiplication loop. 
+
 #include<stdio.h> 
 
 int main()
@@ -54,7 +56,8 @@ int main()
     int productMat[r1][c2];
 
     printf("Here's the product matrix: \n"); 
-
+    
+    // note that r1 = c2, now we need to traverse the mat1rowIndex row of mat1 and mat2columnIndex column of mat2 simultaneously and multiply the respective elements and add it to a sum.
     for (int mat2columnIndex = 0; mat2columnIndex < c2; mat2columnIndex++)
     {
         for (int mat1rowIndex = 0; mat1rowIndex < r1; mat1rowIndex++)
