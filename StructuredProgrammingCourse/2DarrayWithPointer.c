@@ -1,62 +1,62 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main()
-{
-    int r = 3, c = 2;
-    int *arr = malloc(r * c * sizeof(int)); // arr is the pointer to the first memory address in this contiguous set of memory addresses.
-
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            // scanf("%d", &arrPtr[c * i + j]); //Equally valid. arrPtr[c * i + j ] equivalent to *(arrPtr + c * i + j)
-            scanf("%d", (arr + i * r + j));
-        }
-    }
-
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            printf("%d ", *(arr + i * r + c));
-        }
-        printf("\n");
-    }
-}
-
-
-
-
-
-
-// #include<stdio.h> 
-// #include<stdlib.h> 
+// #include <stdio.h>
+// #include <stdlib.h>
 
 // int main()
 // {
-//     int row = 3, column = 2;
-//     int (*arrayOfPointers)[row];
-//     arrayOfPointers = malloc(column * sizeof(arrayOfPointers));
+//     int r = 3, c = 2;
+//     int *arr = malloc(r * c * sizeof(int)); // arr is the pointer to the first memory address in this contiguous set of memory addresses.
 
-//     for (int i = 0; i < row; i++)
+//     for (int i = 0; i < r; i++)
 //     {
-//         for (int j = 0; j < column; j++)
+//         for (int j = 0; j < c; j++)
 //         {
-//             scanf("%d", (arrayOfPointers[i] + j)); 
+//             // scanf("%d", &arrPtr[c * i + j]); //Equally valid. arrPtr[c * i + j ] equivalent to *(arrPtr + c * i + j)
+//             scanf("%d", (arr + i * r + j));
 //         }
 //     }
 
-//     for (int i = 0; i < row; i++)
+//     for (int i = 0; i < r; i++)
 //     {
-//         for (int j = 0; j < column; j++)
+//         for (int j = 0; j < c; j++)
 //         {
-//             printf("%d ", *(arrayOfPointers[i] + j)); 
+//             printf("%d ", *(arr + i * r + c));
 //         }
-//         printf("\n"); 
+//         printf("\n");
 //     }
-//         return 0; 
 // }
+
+
+
+
+
+
+#include<stdio.h> 
+#include<stdlib.h> 
+
+int main()
+{
+    int row = 3, column = 2;
+    int (*arrayOfPointers)[row];
+    arrayOfPointers = malloc(column * sizeof(arrayOfPointers));
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            scanf("%d", (arrayOfPointers[i] + j)); 
+        }
+    }
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            printf("%d ", *(arrayOfPointers[i] + j)); 
+        }
+        printf("\n"); 
+    }
+        return 0; 
+}
 
 
 
