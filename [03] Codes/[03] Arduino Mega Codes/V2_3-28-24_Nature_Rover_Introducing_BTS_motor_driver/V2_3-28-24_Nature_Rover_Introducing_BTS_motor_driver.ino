@@ -66,149 +66,156 @@ unsigned short carMode = 1; // 1 - Joystick driving mood
  
 void loop()
 {
- 
-           if (Serial.available())
-           {
-                command = Serial.readStringUntil('.');  
-                Action = command[0]; //The type of action the remote wants us to take. 
-                speedString = command.substring(2, command.length()); 
-                actionValue = speedString.toInt();   
-                preMillis = millis(); 
-              //  Serial.println("Recieved command!"); 
+ goForward(100); 
+ delay(1000); 
+ Stop(); 
+ delay(2000); 
+ goBackward(100); 
+ delay(1000); 
+ Stop(); 
+ delay(2000); 
+          //  if (Serial.available())
+          //  {
+          //       command = Serial.readStringUntil('.');  
+          //       Action = command[0]; //The type of action the remote wants us to take. 
+          //       speedString = command.substring(2, command.length()); 
+          //       actionValue = speedString.toInt();   
+          //       preMillis = millis(); 
+          //     //  Serial.println("Recieved command!"); 
         
-                        switch(Action) //Which action we are going to take. 
-                        {
-                              case 'f': 
-                              if(carMode==1)
-                              { 
-                                     goForward(actionValue); 
-                                     timeThreshold = 100; 
-                              }
-                              break; 
+          //               switch(Action) //Which action we are going to take. 
+          //               {
+          //                     case 'f': 
+          //                     if(carMode==1)
+          //                     { 
+          //                            goForward(actionValue); 
+          //                            timeThreshold = 100; 
+          //                     }
+          //                     break; 
                               
-                              case 'b': 
-                              if(carMode==1){
-                              goBackward(actionValue); 
-                              timeThreshold = 100; 
-                              }
-                              break; 
-                              case 'l': //Left direction
-                              if(carMode==1){
-                              goLeft(actionValue);  //Turning half at a speed of going. 
-                              timeThreshold = 60; 
-                              }
-                              break; 
+          //                     case 'b': 
+          //                     if(carMode==1){
+          //                     goBackward(actionValue); 
+          //                     timeThreshold = 100; 
+          //                     }
+          //                     break; 
+          //                     case 'l': //Left direction
+          //                     if(carMode==1){
+          //                     goLeft(actionValue);  //Turning half at a speed of going. 
+          //                     timeThreshold = 60; 
+          //                     }
+          //                     break; 
                               
-                              case 'r': //Right direction
-                              if(carMode==1){
-                              goRight(actionValue); 
-                              timeThreshold = 60;   //Turning at the half speed of going
-                              }
-                              break; 
+          //                     case 'r': //Right direction
+          //                     if(carMode==1){
+          //                     goRight(actionValue); 
+          //                     timeThreshold = 60;   //Turning at the half speed of going
+          //                     }
+          //                     break; 
                       
-                              case 'm': //Mode setup 
-                              {
-                                if(actionValue==3)  //the controller wants to set carmode to 3
-                                {   
-                                   initializeSensors(); 
-                                }
-                                else if(carMode==3) //If the actionValue is not 3 and the car was previously set
-                                                    //to sensor reading mode.  
-                                {
-                                    turnOffSensors(); 
-                                }
-                                //Changing the car mode. 
-                                carMode = actionValue; 
-                              }
-                              break; 
+          //                     case 'm': //Mode setup 
+          //                     {
+          //                       if(actionValue==3)  //the controller wants to set carmode to 3
+          //                       {   
+          //                          initializeSensors(); 
+          //                       }
+          //                       else if(carMode==3) //If the actionValue is not 3 and the car was previously set
+          //                                           //to sensor reading mode.  
+          //                       {
+          //                           turnOffSensors(); 
+          //                       }
+          //                       //Changing the car mode. 
+          //                       carMode = actionValue; 
+          //                     }
+          //                     break; 
                       
-                              case 'u': //The base continuous rotation servo of the arm
-                              {
-                               if(actionValue==1){     armServo1.write(CRSspeed+90);       }  //moving in the forward direction. 
-                               else { armServo1.write(90-CRSspeed); }  //moving in the backward direction
-                               delay(CRSruntime);   //for a short time. 
-                               armServo1.write(90); //then stopping the motor from rotating. 
-                              }
-                              break; 
+          //                     case 'u': //The base continuous rotation servo of the arm
+          //                     {
+          //                      if(actionValue==1){     armServo1.write(CRSspeed+90);       }  //moving in the forward direction. 
+          //                      else { armServo1.write(90-CRSspeed); }  //moving in the backward direction
+          //                      delay(CRSruntime);   //for a short time. 
+          //                      armServo1.write(90); //then stopping the motor from rotating. 
+          //                     }
+          //                     break; 
                       
-                              case 'v': //The left and right CSR from the base of the arm. 
-                              {
-                                  if(abs(actionValue) ==1 && anglePairIndex+actionValue>=0 && anglePairIndex+actionValue <= 176)
-                                  {
-                                    anglePairIndex+=actionValue; 
-                                    armServo2Left.write(leftAngles[anglePairIndex]); 
-                                    armServo2Right.write(rightAngles[anglePairIndex]); 
-                                   delay(10);  
-                                  }         
-                              }
-                              break; 
+          //                     case 'v': //The left and right CSR from the base of the arm. 
+          //                     {
+          //                         if(abs(actionValue) ==1 && anglePairIndex+actionValue>=0 && anglePairIndex+actionValue <= 176)
+          //                         {
+          //                           anglePairIndex+=actionValue; 
+          //                           armServo2Left.write(leftAngles[anglePairIndex]); 
+          //                           armServo2Right.write(rightAngles[anglePairIndex]); 
+          //                          delay(10);  
+          //                         }         
+          //                     }
+          //                     break; 
                       
-                              case 'w': //Third CR servo counting from the base of the arm. 
-                              {
-                               if(actionValue==1){     armServo4.write(CRSspeed+90);       }  //moving in the forward direction. 
-                               else { armServo4.write(90-CRSspeed); }  //moving in the backward direction
-                               delay(CRSruntime);   //for a short time. 
-                               armServo4.write(90); //then stopping the motor from rotating.
+          //                     case 'w': //Third CR servo counting from the base of the arm. 
+          //                     {
+          //                      if(actionValue==1){     armServo4.write(CRSspeed+90);       }  //moving in the forward direction. 
+          //                      else { armServo4.write(90-CRSspeed); }  //moving in the backward direction
+          //                      delay(CRSruntime);   //for a short time. 
+          //                      armServo4.write(90); //then stopping the motor from rotating.
                                 
-                              }
-                              break; 
+          //                     }
+          //                     break; 
       
-                              case 'y': //The wrist of the arm. Mini metal gear motor is used.  
-                              {
-                                 moveWrist(actionValue); 
-                              }
-                              break;
+          //                     case 'y': //The wrist of the arm. Mini metal gear motor is used.  
+          //                     {
+          //                        moveWrist(actionValue); 
+          //                     }
+          //                     break;
                       
-                               case 'z': //The gripper mechanism is implemented using gear motor. 
-                              {
-                                 moveGripper(actionValue); 
-                              }
-                              break;
+          //                      case 'z': //The gripper mechanism is implemented using gear motor. 
+          //                     {
+          //                        moveGripper(actionValue); 
+          //                     }
+          //                     break;
                               
-                               default: //"c:val." here c comes as 1,2,3,.... indicating the index of the changed OA settings. 
-                               {
-                                   oaSettingsValue[Action - '0'] = actionValue; 
-                               }     
-                        } 
-           }
-           else 
-           {
-                        if(carMode==1 && millis() - preMillis > timeThreshold) //We will stop only when in mode-1 joystick driving mode. 
-                        {
-                          Stop(); 
-                          preMillis = millis(); 
-                        }
-           }
+          //                      default: //"c:val." here c comes as 1,2,3,.... indicating the index of the changed OA settings. 
+          //                      {
+          //                          oaSettingsValue[Action - '0'] = actionValue; 
+          //                      }     
+          //               } 
+          //  }
+          //  else 
+          //  {
+          //               if(carMode==1 && millis() - preMillis > timeThreshold) //We will stop only when in mode-1 joystick driving mode. 
+          //               {
+          //                 Stop(); 
+          //                 preMillis = millis(); 
+          //               }
+          //  }
 
-            if(carMode==2) //Whether car is in collission avoidance mode. 
-            {
-                         avoidObstacles();
-            }
+          //   if(carMode==2) //Whether car is in collission avoidance mode. 
+          //   {
+          //                avoidObstacles();
+          //   }
 
-            if(carMode==3)
-            {
-                if(millis()/1000 - lastReading > readingDelays)
-                 {
-                 lastReading = millis()/1000; 
-                 Serial.print(sensorReadings()); 
-                 Serial.flush(); 
-                 }; 
-            }
-            if(carMode==4)
-            {
-              while(Serial.available()==0) //LFR starts as soon as some new command comes via the serial monitor. 
-              {
-                followLine(); 
-              }
-              /*
-              Serial.print(analogRead(A5)); 
-              Serial.print("   "); 
-              Serial.print(analogRead(A4)); 
-              Serial.print("   "); 
-              Serial.println(analogRead(A3)); 
-              delay(500); 
-              */
-            }
+          //   if(carMode==3)
+          //   {
+          //       if(millis()/1000 - lastReading > readingDelays)
+          //        {
+          //        lastReading = millis()/1000; 
+          //        Serial.print(sensorReadings()); 
+          //        Serial.flush(); 
+          //        }; 
+          //   }
+          //   if(carMode==4)
+          //   {
+          //     while(Serial.available()==0) //LFR starts as soon as some new command comes via the serial monitor. 
+          //     {
+          //       followLine(); 
+          //     }
+          //     /*
+          //     Serial.print(analogRead(A5)); 
+          //     Serial.print("   "); 
+          //     Serial.print(analogRead(A4)); 
+          //     Serial.print("   "); 
+          //     Serial.println(analogRead(A3)); 
+          //     delay(500); 
+          //     */
+          //   }
 
             
    

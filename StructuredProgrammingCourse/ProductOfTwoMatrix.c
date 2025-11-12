@@ -11,10 +11,11 @@ int main()
     printf("Press \'ENTER\' after typing each row.\n");
 
     int (*mat1)[r1];
-    mat1 = malloc(c1 * sizeof(mat1));
+    //mat1 = malloc(c1 * sizeof(mat1));
 
     for (int i = 0; i < r1; i++)
     {
+        *mat1[i] = malloc(c1 * sizeof(int)); 
         for (int j = 0; j < c1; j++)
         {
             scanf("%d", (mat1[i] + j));
@@ -25,16 +26,58 @@ int main()
     {
         for (int j = 0; j < c1; j++)
         {
-            scanf("%d ", *(mat1[i] + j));
+            printf("%d ", *(mat1[i] + j));
         }
         printf("\n"); 
     }
 
-    for (int i = 0; i < r1; i++)
-    {
-        free(mat1[i]); 
-    }
+    // printf("Enter the dimension of the second matrix: "); 
+    // scanf("%d %d", &r2, &c2); 
 
+    // while(c1!=r2)
+    // {
+    //     printf("Invalid dimension!\n For myltiplying two matrices, column number of first matrix must be equal to the row number of the second matrix!\n"); 
+    //     printf("Enter the dimension of the second matrix: "); 
+    //     scanf("%d %d", &r2, &c2); 
+    // }
+
+    // printf("Press \'ENTER\' after typing each row.\n");
+
+    // int (*mat2)[r2];
+    // mat2 = malloc(c2 * sizeof(mat2)); 
+
+    // for (int i = 0; i < r2; i++)
+    // {
+    //     for (int j = 0; j < c2; j++)
+    //     {
+    //         scanf("%d", (mat2[i] + j)); 
+    //     }
+    // }
+
+    //     for (int i = 0; i < r2; i++)
+    // {
+    //     for (int j = 0; j < c2; j++)
+    //     {
+    //         printf("%d ", *(mat2[i] + j)); 
+    //     }
+    //     printf("\n"); 
+    // }
+
+
+
+
+
+
+
+    // for (int i = 0; i < r1; i++)
+    // {
+    //     free(mat1[i]); 
+    // }
+
+    // for (int i = 0; i < r2; i++)
+    // {
+    //     free(mat2[i]); 
+    // }
         return 0; 
 }
 

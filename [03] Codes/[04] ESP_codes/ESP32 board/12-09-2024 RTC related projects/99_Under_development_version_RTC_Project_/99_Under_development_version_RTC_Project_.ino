@@ -13,7 +13,7 @@
       Hour and minute in the middle and second on the bottom right
       corner. 
    2. How to adjust time and date?  -> Keep pressing the encoder
-      shaft button for 2 seconds at a stretch for enterning into 
+      shaft button for 2 seconds at a stretch for entering into 
       the settings. Then the parameter subject to change will keep
       blinking. 
    3. Turn the encoder knob clockwise for incrementing
