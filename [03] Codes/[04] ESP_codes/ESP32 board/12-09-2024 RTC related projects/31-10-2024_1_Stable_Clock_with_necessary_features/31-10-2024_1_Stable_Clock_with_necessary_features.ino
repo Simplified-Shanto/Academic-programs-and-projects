@@ -37,8 +37,8 @@
 */
 
 
-#include <Wire.h>  // Library for I2C communication
-#include <SPI.h>   // not used here, but needed to prevent a RTClib compile error
+#include <Wire.h> //V:   // Library for I2C communication
+#include <SPI.h>  //V:  // not used here, but needed to prevent a RTClib compile error
 #include <DS3231.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -65,7 +65,7 @@ int currentStateCLK;
 int lastCLKState;
 
 int second, minute, hour, date, month, year;
-//Index 0     1       2          3     4      5
+//Index 0     1       2     3     4      5
 
 void setup() {
   Wire.begin();  // Start the I2C communication
@@ -114,13 +114,14 @@ void loop() {
   }
 
   if (buttonPressed) {
-
     if (settingIndex == -1)                       //If we are currently displaying time, then we will check longpress
     {                                             //in the following mechanism.
       if (digitalRead(encoderButtonPin) == HIGH)  //If the button has been pressed shortly and released,
       {
-        buttonPressed = false;                   //                  then we'll unflag buttonPressed
+        buttonPressed = false;  //                  then we'll unflag buttonPressed
+        Serial.println("Short press!");
       } else if (millis() - lastPress > 2000) {  //If the button is still being pressed then check if it is a long press.
+        Serial.println("Long press detected!");
         lastPress = millis();
         buttonPressed = false;
         handleButtonPress();
@@ -130,10 +131,8 @@ void loop() {
       buttonPressed = false;
     }
   }
-  // Serial.println(settingIndex); 
-  // blinkSetting(settingIndex); 
-
-
+  // Serial.println(settingIndex);
+  // blinkSetting(settingIndex);
 }
 
 // Blink the setting being modified
@@ -147,7 +146,6 @@ void blinkSetting(int index) {
     lastBlinkTime = millis();
   }
 
-
   display.clearDisplay();
   display.setFont(NULL);
   // Display the date
@@ -156,7 +154,7 @@ void blinkSetting(int index) {
   display.setCursor(30, 0);
   if (index != 0) {
     display.print(date);
-  } else if (blinkState) {
+  } else if (blinkState) { // index = 0, we are changing this value right now, and blinkstate = 1. 
     display.print(date);
   }
 
@@ -169,39 +167,37 @@ void blinkSetting(int index) {
   }
 
   display.setCursor(80, 0);
-
   if (index != 2) {
     display.print(year);
   } else if (blinkState) {
     display.print(year);
   }
 
-  display.println();
-  display.setTextSize(2);
-  display.setCursor(30, 25);
+ // display.println();
+ // display.setTextSize(2);
+  // display.setCursor(30, 25);
 
-  if (index != 3) {
-    display.print(hour);
-  } else if (blinkState) {
-    display.print(hour);
-  }
-  display.setCursor(70, 25);
-  display.print(":");
-  if (index != 4) {
-    display.print(minute);
-  } else if (blinkState) {
-    display.print(minute);
-  }
+  // if (index != 3) {
+  //   display.print(hour);
+  // } else if (blinkState) {
+  //   display.print(hour);
+  // }
+  // display.setCursor(70, 25);
+  // display.print(":");
+  // if (index != 4) {
+  //   display.print(minute);
+  // } else if (blinkState) {
+  //   display.print(minute);
+  // }
 
-  // Display Second in small font at the corner
-  display.setTextSize(1);
-  display.setCursor(110, 50);
-  if (index != 5) {
-    display.print(second);
-  } else if (blinkState) {
-    display.print(second);
-  }
-
+  // // Display Second in small font at the corner
+  // display.setTextSize(1);
+  // display.setCursor(110, 50);
+  // if (index != 5) {
+  //   display.print(second);
+  // } else if (blinkState) {
+  //   display.print(second);
+  // }
 
 
   display.display();
@@ -245,13 +241,10 @@ String monthName(int month) {
 
 
 
-
-
-  // int second, minute, hour, day, date, month, year;
-  // //Index 5     4       3          0     1      2
-  // int settingIndex = -1;  // -1 means no setting mode, otherwise it represents the setting being modified
-
-  // Display Hour and Minute in big font (central)
+// int second, minute, hour, day, date, month, year;
+// //Index 5     4       3          0     1      2
+// int settingIndex = -1;  // -1 means no setting mode, otherwise it represents the setting being modified
+// Display Hour and Minute in big font (central)
 
 // Interrupt Service Routine (ISR) for the rotary encoder
 void encoderISR() {
@@ -267,8 +260,8 @@ void encoderISR() {
       switch (settingIndex) {
         case 5: second = (second + counter) % 60; break;
         case 4: minute = (minute + counter) % 60; break;
-        case 3: hour = (hour + counter) % 25; break; //Time counting and settings will be done in 24 hour format, but 
-                                                      //during displaying time, it'll be converted to 12 hour format. 
+        case 3: hour = (hour + counter) % 25; break;  //Time counting and settings will be done in 24 hour format, but
+                                                      //during displaying time, it'll be converted to 12 hour format.
         case 0: date = (date + counter) % 32; break;
         case 1: month = (month + counter) % 12; break;
         case 2: year += counter; break;
@@ -295,7 +288,7 @@ void encoderISR() {
 void buttonISR() {
   lastPress = millis();
   buttonPressed = true;  // Set the flag when the button is pressed
- // Serial.println("It's pressing!");
+  Serial.println("It's pressing!");
 }
 // Handle button presses: cycle through settings or exit settings mode
 void handleButtonPress() {
@@ -306,10 +299,11 @@ void handleButtonPress() {
     settingIndex = -1;
     saveSettings();
   }
+  Serial.print("Setting Index = "); 
+  Serial.println(settingIndex); 
 }
 
 void saveSettings() {
-
   //rtc.setDateTime(2024, 9, 12, 3, 34, 30);
   rtc.setDateTime(year, month + 1, date, hour, minute, second);
 }

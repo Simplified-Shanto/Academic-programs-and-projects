@@ -25,16 +25,33 @@
 
 #define buttonPin 25
 
-#define relay1In  21 
-#define relay2In  22
+#define relay1In  22 // Water heater 
+#define relay2In  21 // Coffee heater 
 
 #define vulveRelayIn 23 
 
+unsigned long waterTimer = millis(); 
+unsigned long coffeeTimer = millis(); 
+unsigned long waterVulveTimer = millis(); 
+unsigned long coffeePowderMotorTimer = millis(); 
+unsigned long milkPowderMotorTimer = millis(); 
+unsigned long coffeePumpTimer = millis(); 
+#define coffeeHeatTime 30 // second 
+#define waterHeatTime  30 // second 
+#define waterVulveTime 60 // second
+#define coffeePumpTime 20 
+#define milkPowderMotorTime 20 
+#define coffeePowderMotorTime 20 
+unsigned short coffeeHeaterFlag = 0; 
+unsigned short waterHeaterFlag = 0; 
+unsigned short waterVulveFlag = 0; // 0 = not started, 1 = vulve is open, 2 = vulve has been closed after opening for a while 
+unsigned short coffeePowderMotorFlag = 0; // 0 = not started, 1 = motor is running, 2 = motor has been stopped  after running for a while 
+unsigned short milkPowderMotorFlag = 0; // 0 = not started, 1 = motor is running, 2 = motor has been stopped  after running for a while
+unsigned short coffeePumpFlag = 0; // 0 = not started, 1 = motor is running, 2 = motor has been stopped  after running for a while  
 
 
 
-
-#define motorSpeed 200
+#define motorSpeed 250
 int startFlag = 0 ; // Whether we have started the motor running sequence with button press.
 
 
@@ -74,60 +91,159 @@ void setup() {
   digitalWrite(relay2In, HIGH); 
   digitalWrite(vulveRelayIn, HIGH); 
 
+
+
   // put your setup code here, to run once:
 }
 
 
 
 void loop() {
-  if (digitalRead(buttonPin) == LOW) {
-    delay(500);  //Debounce delay
-    Serial.println("Pressed!"); 
-    startFlag = 1 - startFlag;
-    if (startFlag == 0) {
-      stopMotor1();
-      stopMotor2();
-      stopMotor3();
-    }
-  }
+  digitalWrite(relay1In, LOW); 
+  delay(30*1000); 
+  digitalWrite(relay1In, HIGH); 
 
-  if (startFlag == 1) {
-    digitalWrite(relay1In, LOW); 
-    delay(1000); 
-    digitalWrite(relay1In, HIGH); 
-    delay(1000); 
-    digitalWrite(relay2In, LOW); 
-    delay(1000); 
-    digitalWrite(relay2In, HIGH); 
-    delay(1000); 
 
-    digitalWrite(vulveRelayIn, LOW); 
-    delay(1000); 
-    digitalWrite(vulveRelayIn, HIGH); 
+  runMotor1(motorSpeed); 
+  runMotor2(motorSpeed); 
+  delay(2*1000); 
+  stopMotor1(); 
+  delay(3*1000); 
+  stopMotor2(); 
+
+  
+  digitalWrite(vulveRelayIn, LOW); 
+  delay(80*1000); 
+  digitalWrite(vulveRelayIn, HIGH); 
+
+  digitalWrite(relay2In, LOW); 
+  delay(60*1000); 
+  digitalWrite(relay2In, HIGH); 
+
+
+  runMotor3(motorSpeed); 
+  delay(10*1000); 
+  stopMotor3(); 
+
+
+
+    
+    
+
+  // if (digitalRead(buttonPin) == LOW) {
+  //   delay(500);  //Debounce delay
+  //   Serial.println("Pressed!"); 
+  //   startFlag = 1 - startFlag;
+  //   if (startFlag == 0) {
+  //     resetProcess(); 
+  //   }
+  // }
+
+  // if (startFlag == 1) {
+  //   if(waterHeaterFlag==0)   //Start heating the water 
+  //   {
+  //     waterHeaterFlag = 1; 
+  //     waterTimer = millis(); 
+  //     digitalWrite(relay1In, LOW); 
+  //     // Open the vulve for pouring water into the cup. 
+  //   }
+  //   if(waterHeaterFlag==1 && millis() - waterTimer > waterHeatTime*1000)
+  //   {
+  //     digitalWrite(relay1In, HIGH);  
+  //     waterHeaterFlag = 2; // Water heating is done 
+  //     //Pouring coffee powder. 
+  //     runMotor1(motorSpeed); 
+  //     coffeePowderMotorFlag = 1; 
+  //     coffeePowderMotorTimer = millis(); 
+  //   }
+
+  //   if(coffeePowderMotorFlag==1 && millis() - coffeePowderMotorTimer > coffeePowderMotorTime * 1000)
+  //   {
+  //     stopMotor1(); 
+  //     coffeePowderMotorFlag = 2; // coffee Powder pouring is done 
+  //     //Pouring milk powder
+  //     runMotor2(motorSpeed); 
+  //     milkPowderMotorFlag = 1; 
+  //     milkPowderMotorTimer = millis(); 
+  //   }
+
+  //   if(milkPowderMotorFlag==1 && millis() - milkPowderMotorTimer > milkPowderMotorTime * 1000)
+  //   {
+  //     stopMotor2(); 
+  //     milkPowderMotorFlag = 2; //milk Powder pouring is done 
+  //     //Pouring water 
+  //     waterVulveFlag = 1; 
+  //     digitalWrite(vulveRelayIn, LOW); //Opening the vulve to pour water into the cup. 
+  //   }
+
+  //   if(waterVulveFlag == 1 && millis() - waterVulveTimer > waterVulveTime*1000)
+  //   {
+  //     digitalWrite(vulveRelayIn, HIGH); //Closing the relay. 
+  //     waterVulveFlag = 2; // Water pouring has been done. 
+  //     //Starting the coffee heating process. 
+  //     coffeeHeaterFlag = 1; 
+  //     coffeeTimer = millis(); 
+  //     digitalWrite(relay2In, LOW);
+  //   }
+
+  //   if(coffeeHeaterFlag==1 && millis() - coffeeTimer > coffeeHeatTime*1000)  
+  //   {
+  //     digitalWrite(relay2In, HIGH); 
+  //     coffeeHeaterFlag = 2; // Coffee heating is done 
+  //     runMotor3(motorSpeed); //Start pumping the coffee 
+  //     coffeePumpFlag = 1; 
+  //   }
+
+  //   if(coffeePumpFlag ==1 && millis() - coffeePumpTimer > coffeePumpTime*1000)
+  //   {
+  //     coffeePumpFlag = 2; 
+  //   }
+  //   // digitalWrite(vulveRelayIn, LOW); 
+  //   // delay(1000); 
+  //   // digitalWrite(vulveRelayIn, HIGH); 
  
 
-    runMotor1(motorSpeed);
-    delay(5000);
-    stopMotor1();
-    delay(10);
+  //   // runMotor1(motorSpeed);
+  //   // delay(5000);
+  //   // stopMotor1();
+  //   // delay(10);
 
-    // runMotor2(motorSpeed);
-    // delay(5000);
-    // stopMotor2();
-    // delay(10);
+  //   // runMotor3(motorSpeed);
+  //   // delay(5000);
+  //   // stopMotor3();
+  //   // delay(10);
 
-    runMotor3(motorSpeed);
-    delay(5000);
-    stopMotor3();
-    delay(10);
+  //   // runMotor4(motorSpeed);
+  //   // delay(5000);
+  //   // stopMotor4();
+  //   // delay(10);
 
-    runMotor4(motorSpeed);
-    delay(5000);
-    stopMotor4();
-    delay(10);
-    startFlag = 0; 
+  //   if(coffeePumpFlag == 2)
+  //   {
+  //     startFlag = 0; 
+  //     resetProcess(); 
+  //   }
+  // }
 
-  }
+
+  
+}
+
+
+void resetProcess()
+{
+      digitalWrite(relay2In, HIGH); 
+      coffeeHeaterFlag = 0; 
+      digitalWrite(relay1In, HIGH); 
+      waterHeaterFlag = 0; 
+      digitalWrite(vulveRelayIn, HIGH);  
+      waterVulveFlag = 0; 
+      stopMotor1();
+      coffeePowderMotorFlag = 0; 
+      stopMotor2();
+      milkPowderMotorFlag = 0; 
+      stopMotor3(); // Coffee pump motor 
+      coffeePumpFlag = 0; 
 }
 
 
@@ -141,34 +257,26 @@ void stopMotor1() {
   ledcWrite(M1RPWM_LEDC_CHANNEL, 0);
 }
 
+
+
 void runMotor2(int Speed) {
-  ledcWrite(M2LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M2RPWM_LEDC_CHANNEL, Speed);
-}
-
-void stopMotor2() {
-  ledcWrite(M2LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M2RPWM_LEDC_CHANNEL, 0);
-}
-
-
-void runMotor3(int Speed) {
   ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
   ledcWrite(M3RPWM_LEDC_CHANNEL, Speed);
 }
 
-void stopMotor3() {
+void stopMotor2() {
   ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
   ledcWrite(M3RPWM_LEDC_CHANNEL, 0);
 }
 
 
-void runMotor4(int Speed) {
-  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
+void runMotor3(int Speed) {
   ledcWrite(M4RPWM_LEDC_CHANNEL, Speed);
+
+  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
 }
 
-void stopMotor4() {
+void stopMotor3() {
   ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
   ledcWrite(M4RPWM_LEDC_CHANNEL, 0);
 }
