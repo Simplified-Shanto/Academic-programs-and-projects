@@ -24,6 +24,7 @@
 #define motor4Rpwm 27  //14
 
 #define buttonPin 25
+#define statusLedPin 2 //Shows whether the operation is running or not
 
 #define relay1In  22 // Water heater 
 #define relay2In  21 // Coffee heater 
@@ -86,6 +87,7 @@ void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
   pinMode(relay1In,  OUTPUT); 
   pinMode(relay2In, OUTPUT); 
+  pinMode(statusLedPin, OUTPUT); 
   pinMode(vulveRelayIn, OUTPUT); 
   digitalWrite(relay1In, HIGH); 
   digitalWrite(relay2In, HIGH); 
@@ -98,48 +100,89 @@ void setup() {
 
 
 
-void loop() {
-  digitalWrite(relay1In, LOW); 
-  delay(30*1000); 
-  digitalWrite(relay1In, HIGH); 
+void loop() { 
 
+  if (digitalRead(buttonPin) == LOW) {
+    digitalWrite(statusLedPin,  HIGH); 
+    delay(500);  //Debounce delay
+    Serial.println("Pressed!"); 
+    startFlag = 1 - startFlag;
+    if (startFlag == 0) {
+      resetProcess(); 
+      digitalWrite(statusLedPin, LOW); 
+    }
+  }
+
+ if (startFlag == 1) {
+  digitalWrite(relay1In, LOW); 
+  delay(60*1000); 
+  digitalWrite(relay1In, HIGH); 
 
   runMotor1(motorSpeed); 
   runMotor2(motorSpeed); 
-  delay(2*1000); 
+  delay(5*1000); 
   stopMotor1(); 
-  delay(3*1000); 
+  delay(5*1000); 
   stopMotor2(); 
 
   
   digitalWrite(vulveRelayIn, LOW); 
-  delay(80*1000); 
+  delay(240*1000); 
   digitalWrite(vulveRelayIn, HIGH); 
 
   digitalWrite(relay2In, LOW); 
-  delay(60*1000); 
+  delay(25*60*1000); 
   digitalWrite(relay2In, HIGH); 
 
+  for(int i = 0; i < 10; i++)
+  {
+    digitalWrite(statusLedPin, LOW); 
+    delay(1000); 
+    digitalWrite(statusLedPin, HIGH); 
+    delay(1000); 
+  }
+  delay(2000); 
 
   runMotor3(motorSpeed); 
-  delay(10*1000); 
+  delay(1000); 
+  stopMotor3(); 
+
+  for(int i = 0; i < 10; i++)
+  {
+    digitalWrite(statusLedPin, LOW); 
+    delay(1000); 
+    digitalWrite(statusLedPin, HIGH); 
+    delay(1000); 
+  }
+  delay(2000); 
+
+  runMotor3(motorSpeed); 
+  delay(1000); 
+  stopMotor3(); 
+
+
+    for(int i = 0; i < 10; i++)
+  {
+    digitalWrite(statusLedPin, LOW); 
+    delay(1000); 
+    digitalWrite(statusLedPin, HIGH); 
+    delay(1000); 
+  }
+  delay(2000); 
+
+  runMotor3(motorSpeed); 
+  delay(1000); 
   stopMotor3(); 
 
 
 
-    
-    
 
-  // if (digitalRead(buttonPin) == LOW) {
-  //   delay(500);  //Debounce delay
-  //   Serial.println("Pressed!"); 
-  //   startFlag = 1 - startFlag;
-  //   if (startFlag == 0) {
-  //     resetProcess(); 
-  //   }
-  // }
 
-  // if (startFlag == 1) {
+  startFlag = 0; 
+  digitalWrite(statusLedPin, LOW); 
+
+
+
   //   if(waterHeaterFlag==0)   //Start heating the water 
   //   {
   //     waterHeaterFlag = 1; 
@@ -223,10 +266,7 @@ void loop() {
   //     startFlag = 0; 
   //     resetProcess(); 
   //   }
-  // }
-
-
-  
+  }
 }
 
 
