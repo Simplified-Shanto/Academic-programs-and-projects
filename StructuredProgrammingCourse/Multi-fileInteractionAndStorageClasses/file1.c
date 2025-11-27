@@ -1,5 +1,4 @@
 // Usage of the storage class static.
-
 // Compile both files together with: gcc file1.c file2.c -o combinedProgram
 // Run the .exe file:   .\combinedProgram    or .\combinedProgram.exe
 

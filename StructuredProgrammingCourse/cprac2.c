@@ -1,24 +1,4 @@
 
-
-// #include<stdio.h>
-// #include<stdlib.h>
-
-// int main()
-// {
-// // Allocate memory
-// int *ptr;
-// ptr = calloc(4, sizeof(*ptr));
-
-// // Write to the memory
-// *ptr = 2;
-// ptr[1] = 4;
-// ptr[2] = 6;
-
-// // Read from the memory
-// printf("%d\n", *ptr);
-// printf("%d %d %d", ptr[1], ptr[2], ptr[3]);
-// }
-
 // //Memory allocation with calloc()
 // #include<stdio.h>
 // #include<stdlib.h>
@@ -27,12 +7,14 @@
 // {
 //     int *studentID;
 //     int studentNumber = 12;
-//     studentID = calloc(studentNumber, sizeof(studentID));
+//     studentID = calloc(studentNumber, 2*sizeof(studentID)); // Allocating 2 * (4 byte for integer) memory for each student. First four byte representing one integer will store the studentID, the Second integer stores the age of the student. 
 
 //     for (int i = 0; i < studentNumber; i++)
 //     {
-//         *(studentID + i) = i;
-//         printf("Student %d has id 20243310%d\n", i + 1, *(studentID + i));
+//         *(studentID + i*2) = i;
+//         *(studentID + i * 2 + 1) = 12 * i; //Student's age.
+
+//         printf("Student %d has id 20243310%d and age = %d\n", i + 1, *(studentID + i*2), *(studentID + i*2 + 1));
 //     }
 // }
 
@@ -82,7 +64,14 @@
 //     return 0;
 // }
 
-// //Print an array in reverse order using pointer
+
+
+
+//Print an array in reverse order using pointer
+// #include <stdio.h>
+// #include <String.h>
+// #include <time.h>
+// #include <ctype.h>
 
 // int main()
 // {
@@ -97,14 +86,13 @@
 //     return 0;
 // }
 
-// int x[3] = {5, 10, 15};
 
-// int main()
-// {
-//     ++(*x);
-//     printf("%d", *x);
-//     return 0;
-// }
+
+
+
+
+
+
 
 // int vowel_count = 0;
 // int consonant_count = 0;
@@ -163,7 +151,7 @@
 //     return 0;
 // }
 
-// Implement the function strlen(), strcmp(), strcpy(), strcat()
+//Implement the function strlen(), strcmp(), strcpy(), strcat()
 
 // int stringlength(char str[100])
 // {
@@ -192,7 +180,7 @@
 
 // void copystring(char source[100], char destination[100])
 // {
-//     for (int i = 0; i < stringlength(destination); i++)
+//     for (int i = 0; i < stringlength(destination); i++)  // In case the source string's length is smaller than the destination string's length, clearing full of the destination string, thus the overhead part of the destination string in those cases does not contain any character. 
 //     {
 //         destination[i] = ' ';
 //     }
@@ -227,7 +215,36 @@
 //     return 0;
 // }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // //Implement insertion sort:
+
+// Insertion sort is a simple sorting algorithm that works by iteratively inserting each element of an unsorted list into its correct position in a sorted portion of the list. It is like sorting playing cards in your hands. You split the cards into two groups: the sorted cards and the unsorted cards. Then, you pick a card from the unsorted group and put it in the right place in the sorted group.
+
+// We start with the second element of the array as the first element is assumed to be sorted.
+// Compare the second element with the first element if the second element is smaller then swap them.
+// Move to the third element, compare it with the first two elements, and put it in its correct position
+// Repeat until the entire array is sorted.
+// Insertion-Sort--
 // int main()
 // {
 
@@ -262,6 +279,16 @@
 //     }
 //     return 0;
 // }
+
+
+
+
+
+
+
+
+
+
 
 // Take a string input from user and mention whether it is a palindrome or not.
 
@@ -313,9 +340,25 @@
 //         printf("default case\n");
 //     }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Objective: Reverese a string using recursion
 
-// void revString(char str[100], int l , int r)
+// void revString(char str[100], int l , int r)   // Recursion is being used to traverse half of the string without using loop - nothing fancy, just an alternative to loop. 
 // {
 //     if(l < r)
 //     {
@@ -337,18 +380,27 @@
 //     printf("%s", str);
 // }
 
+
+
+
+
+// // Convert a decimal number to hexadecimal number using recursion. 
+
+// #include<stdio.h> 
+// #include<string.h> 
+
 // char hexDigits[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
 // char DecToHex(int dec, char output[100])
 // {
-//     if(dec/10==0)
+//     if(dec/10==0)  // If the decimal value with which the function is being called is in range 0 to 9. 
 //     {
 //         return hexDigits[dec];
 //     }
 //     else
 //     {
-//         output[strlen(output)] =  hexDigits[dec % 16];
-//         output[strlen(output)] = DecToHex(dec / 16, output);
+//         output[strlen(output)] =  hexDigits[dec % 16]; // strlen(output)  = size of the output string = index of the incoming hex digit. After this line, that size increases by 1. 
+//         output[strlen(output)] = DecToHex(dec / 16, output); // We're trying to fill up the next unfulfilled place in the output string by the hexadecimal value of the remaining decimal value. 
 //     }
 // }
 
@@ -363,64 +415,16 @@
 //     }
 //         return 0;
 // }
-// #include<stdio.h> 
-
-// void merge(int num[100],int l,int m,int r)
-// {
-//     int fp = l, sp = m + 1;
-//     int temp[r-l+1];
-
-//      int i = 0;
-//      for (     ; i <r-l+1; i++)
-//      {
-//         if(fp <= m && sp <= r)
-//         {
-//             if(num[fp] < num[sp]) {  temp[i] = num[fp++]; }
-//             else { temp[i] = num[sp++]; }
-//         }
-//         else if(fp<=m){ temp[i] = num[fp++]; }
-//         else if(sp<=r)  temp[i] = num[sp++];
-//     }
-//      for (int i = l, j = 0; i <= r; i++, j++) {
-//          num[i] = temp[j];
-//          //printf("%d ", temp[i - l]);
-//      }
-// }
 
 
-// //Implement merge sort
-// void mergeSort(int num[100], int l , int r)
-// {
-//     if(l < r )
-//     {
-//         int mid = (l + r) / 2;
-//         mergeSort(num, l, mid);
-//         mergeSort(num, mid + 1, r);
-//         merge(num, l, mid, r);
-//     }
-//     else
-//     {
-//         return;
-//     }
-// }
 
-// int main()
-// {
-//     int n = 5;
-//     int num[5] = { 23, 11, 15, 10, 9};
-//     //merge(num, 0,(n-1)/2, n-1);
 
-//     mergeSort(num, 0, n - 1);
 
-//     for (int i = 0; i < n; i++)
-//     {
-//         printf("%d ", num[i]);
-//     }
-//     return 0;
-// }
+
+
 
 // Sum of digits of a number using recursion
-//  int digitSum(int sum, int n)
+//  int digitSum(int sum, int n)  // Recursion is being mainly used for traversing the number - which could be easily done with a loop. 
 //  {
 //      if(n==0)
 //          return sum;
@@ -436,6 +440,11 @@
 //     return 0;
 // }
 
+
+
+
+
+
 // // Check palindrome number using recursion.
 // int checkPalin(char str[100], int l, int r)
 // {
@@ -445,7 +454,7 @@
 //     }
 //     else if (str[l]==str[r]) // Still at this point, the part checked indicates it to be palindrome
 //     {
-//         return checkPalin(str, l + 1, r - 1);
+//         return checkPalin(str, l + 1, r - 1);  // Mainly using recursion to traverse the string from its terminal and cutting it shorter and shorter from both sides. 
 //     }
 //     else // We've found at a mismatch at some index.
 //     {
@@ -460,6 +469,11 @@
 //     printf("%d", checkPalin(num, 0, strlen(num)-1));
 //     return 0;
 // }
+
+
+
+
+
 
 // Take a string input from user and count the frequency of vowels in that string
 

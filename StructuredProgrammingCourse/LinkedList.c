@@ -28,13 +28,13 @@ void printList(Node *startingNode)
 
 // Appending element at a particular index of the linked list. 
 
-Node* insertNode(Node* leftMostNodePointer, int index, int value)
+Node* insertNode(Node* leftMostNodePointer, int index, int value)  // This function returns the new leftmost node in the linked list after performing the insertion. 
 {
     Node *newNodePointer = createNode(value); 
     if(index==0)
     {
         newNodePointer->next = leftMostNodePointer;
-        return newNodePointer; 
+        return newNodePointer;   
     }
     else 
     {
@@ -47,11 +47,10 @@ Node* insertNode(Node* leftMostNodePointer, int index, int value)
         if(currentNodePointer->next == NULL) // There are n nodes in the list, but we want to insert the node at n+1 th position. 
         {
             currentNodePointer->next = newNodePointer;
-            
         }
         else
         {
-        Node *temporaryNodePointer = leftMostNodePointer->next;
+        Node *temporaryNodePointer = leftMostNodePointer->next; // Storing the pointer to the rightNode before which the newNode will be inserted. 
         leftMostNodePointer->next = newNodePointer;
         newNodePointer->next = temporaryNodePointer;
         }
