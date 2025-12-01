@@ -5,14 +5,14 @@
 
 int main()
 {
-    int a,  b;
-    scanf("%d %d", &a, &b);
+    unsigned int a,  b;
+    scanf("%u %u", &a, &b);
 
     a = a + b;
     b = a - b;
     a = a - b;
 
-    printf("a = %d, b = %d", a, b); 
+    printf("a = %X, b = %u", a, b); 
 
     return 0; 
 }
