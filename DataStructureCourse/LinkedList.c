@@ -31,7 +31,7 @@ void printList(Node *startingNode)
 Node* insertNode(Node* leftMostNodePointer, int index, int value)  // This function returns the new leftmost node in the linked list after performing the insertion. 
 {
     Node *newNodePointer = createNode(value); 
-    if(index==0)
+    if(index==0) //Inserting element in the very first element of the list. 
     {
         newNodePointer->next = leftMostNodePointer;
         return newNodePointer;   
@@ -48,7 +48,7 @@ Node* insertNode(Node* leftMostNodePointer, int index, int value)  // This funct
         {
             currentNodePointer->next = newNodePointer;
         }
-        else
+        else  // We want to inset the element in a non terminal position in the linked list. 
         {
         Node *temporaryNodePointer = leftMostNodePointer->next; // Storing the pointer to the rightNode before which the newNode will be inserted. 
         leftMostNodePointer->next = newNodePointer;

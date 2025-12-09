@@ -8,8 +8,9 @@
 #define M2LPWM_LEDC_CHANNEL 8  // LEDC channel to use
 #define M2RPWM_LEDC_CHANNEL 9
 
-#define motor2Lpwm 13  //5
-#define motor2Rpwm 14  //17
+
+// #define motor2Lpwm 13  //5
+// #define motor2Rpwm 14  //17
 
 #define M3LPWM_LEDC_CHANNEL 10  // LEDC channel to use
 #define M3RPWM_LEDC_CHANNEL 11
@@ -24,6 +25,7 @@
 #define motor4Rpwm 27  //14
 
 #define buttonPin 25
+#define coffeeDispenseButtonPin 14
 #define statusLedPin 2 //Shows whether the operation is running or not
 
 #define relay1In  22 // Water heater 
@@ -52,7 +54,7 @@ unsigned short coffeePumpFlag = 0; // 0 = not started, 1 = motor is running, 2 =
 
 
 
-#define motorSpeed 250
+#define motorSpeed 150
 int startFlag = 0 ; // Whether we have started the motor running sequence with button press.
 
 
@@ -65,11 +67,11 @@ void setup() {
   ledcAttachPin(motor1Lpwm, M1LPWM_LEDC_CHANNEL);  // Attach the GPIO pin to the LEDC channel
   ledcAttachPin(motor1Rpwm, M1RPWM_LEDC_CHANNEL);
 
-  ledcSetup(M2RPWM_LEDC_CHANNEL, 1000, 8);
-  ledcSetup(M2RPWM_LEDC_CHANNEL, 1000, 8);
+  // ledcSetup(M2RPWM_LEDC_CHANNEL, 1000, 8);
+  // ledcSetup(M2RPWM_LEDC_CHANNEL, 1000, 8);
 
-  ledcAttachPin(motor2Lpwm, M2LPWM_LEDC_CHANNEL);  // Attach the GPIO pin to the LEDC channel
-  ledcAttachPin(motor2Rpwm, M2RPWM_LEDC_CHANNEL);
+  // ledcAttachPin(motor2Lpwm, M2LPWM_LEDC_CHANNEL);  // Attach the GPIO pin to the LEDC channel
+  // ledcAttachPin(motor2Rpwm, M2RPWM_LEDC_CHANNEL);
 
 
   ledcSetup(M3RPWM_LEDC_CHANNEL, 1000, 8);
@@ -85,6 +87,8 @@ void setup() {
   ledcAttachPin(motor4Rpwm, M4RPWM_LEDC_CHANNEL);
 
   pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(coffeeDispenseButtonPin, INPUT_PULLUP); 
+
   pinMode(relay1In,  OUTPUT); 
   pinMode(relay2In, OUTPUT); 
   pinMode(statusLedPin, OUTPUT); 
@@ -131,7 +135,7 @@ void loop() {
   digitalWrite(vulveRelayIn, HIGH); 
 
   digitalWrite(relay2In, LOW); 
-  delay(25*60*1000); 
+  delay(1*60*1000); 
   digitalWrite(relay2In, HIGH); 
 
   for(int i = 0; i < 10; i++)
@@ -143,9 +147,7 @@ void loop() {
   }
   delay(2000); 
 
-  runMotor3(motorSpeed); 
-  delay(1000); 
-  stopMotor3(); 
+
 
   for(int i = 0; i < 10; i++)
   {
@@ -156,30 +158,83 @@ void loop() {
   }
   delay(2000); 
 
-  runMotor3(motorSpeed); 
-  delay(1000); 
-  stopMotor3(); 
 
-
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 20; i++)
   {
     digitalWrite(statusLedPin, LOW); 
-    delay(1000); 
+    delay(500); 
     digitalWrite(statusLedPin, HIGH); 
-    delay(1000); 
+    delay(500); 
   }
   delay(2000); 
 
-  runMotor3(motorSpeed); 
-  delay(1000); 
-  stopMotor3(); 
-
-
-
+  coffeePumpFlag = 1; 
 
 
   startFlag = 0; 
   digitalWrite(statusLedPin, LOW); 
+
+ }
+
+ if( digitalRead(coffeeDispenseButtonPin)==LOW)
+ {
+    runMotor3(150); 
+    delay(1500); 
+    stopMotor3(); 
+ }
+}
+
+
+void resetProcess()
+{
+      digitalWrite(relay2In, HIGH); 
+      coffeeHeaterFlag = 0; 
+      digitalWrite(relay1In, HIGH); 
+      waterHeaterFlag = 0; 
+      digitalWrite(vulveRelayIn, HIGH);  
+      waterVulveFlag = 0; 
+      stopMotor1();
+      coffeePowderMotorFlag = 0; 
+      stopMotor2();
+      milkPowderMotorFlag = 0; 
+      stopMotor3(); // Coffee pump motor 
+      coffeePumpFlag = 0; 
+}
+
+
+void runMotor1(int Speed) {
+  ledcWrite(M1LPWM_LEDC_CHANNEL, 0);
+  ledcWrite(M1RPWM_LEDC_CHANNEL, Speed);
+}
+
+void stopMotor1() {
+  ledcWrite(M1LPWM_LEDC_CHANNEL, 0);
+  ledcWrite(M1RPWM_LEDC_CHANNEL, 0);
+}
+
+
+
+void runMotor2(int Speed) {
+  ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
+  ledcWrite(M3RPWM_LEDC_CHANNEL, Speed);
+}
+
+void stopMotor2() {
+  ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
+  ledcWrite(M3RPWM_LEDC_CHANNEL, 0);
+}
+
+
+void runMotor3(int Speed) {
+  ledcWrite(M4RPWM_LEDC_CHANNEL, Speed);
+
+  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
+}
+
+void stopMotor3() {
+  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
+  ledcWrite(M4RPWM_LEDC_CHANNEL, 0);
+}
 
 
 
@@ -265,58 +320,4 @@ void loop() {
   //   {
   //     startFlag = 0; 
   //     resetProcess(); 
-  //   }
-  }
-}
-
-
-void resetProcess()
-{
-      digitalWrite(relay2In, HIGH); 
-      coffeeHeaterFlag = 0; 
-      digitalWrite(relay1In, HIGH); 
-      waterHeaterFlag = 0; 
-      digitalWrite(vulveRelayIn, HIGH);  
-      waterVulveFlag = 0; 
-      stopMotor1();
-      coffeePowderMotorFlag = 0; 
-      stopMotor2();
-      milkPowderMotorFlag = 0; 
-      stopMotor3(); // Coffee pump motor 
-      coffeePumpFlag = 0; 
-}
-
-
-void runMotor1(int Speed) {
-  ledcWrite(M1LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M1RPWM_LEDC_CHANNEL, Speed);
-}
-
-void stopMotor1() {
-  ledcWrite(M1LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M1RPWM_LEDC_CHANNEL, 0);
-}
-
-
-
-void runMotor2(int Speed) {
-  ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M3RPWM_LEDC_CHANNEL, Speed);
-}
-
-void stopMotor2() {
-  ledcWrite(M3LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M3RPWM_LEDC_CHANNEL, 0);
-}
-
-
-void runMotor3(int Speed) {
-  ledcWrite(M4RPWM_LEDC_CHANNEL, Speed);
-
-  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
-}
-
-void stopMotor3() {
-  ledcWrite(M4LPWM_LEDC_CHANNEL, 0);
-  ledcWrite(M4RPWM_LEDC_CHANNEL, 0);
-}
+  // }
