@@ -10,17 +10,6 @@ typedef struct Node
 Node *TopNodePtr; //Since declared in global scope, it's set to NULL initially. 
 
 
-void printStack()
-{
-    Node *tempNodePtr = TopNodePtr;
-
-    printf("\nCurrently the stack looks like this: \n"); 
-    while(tempNodePtr!=NULL)
-    {
-        printf("%d\n", tempNodePtr->data);
-        tempNodePtr = tempNodePtr->Next; 
-    }
-}
 
 
 void push(int value)
