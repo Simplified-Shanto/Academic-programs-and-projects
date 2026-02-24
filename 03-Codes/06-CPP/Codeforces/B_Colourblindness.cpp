@@ -70,6 +70,8 @@ void solve()
   
  int n; cin >> n; 
  string s,p; cin >> s >> p ; 
+
+ 
  for(int i = 0; i<n; i++)
  {
     if((s[i]=='R' && p[i]!='R') || (p[i]=='R' && s[i]!='R'))
