@@ -3,20 +3,17 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: Build active file (MSYS2 UCRT64)",
-            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "label": "C/C++: Build active file",
+            "command": "g++",
             "args": [
                 "-std=c++17",
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
-                "cwd": "${fileDirname}",
-                "env": {
-                    "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
-                }
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"
@@ -24,6 +21,22 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "windows": {
+                "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+                "args": [
+                    "-std=c++17",
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                ],
+                "options": {
+                    "cwd": "${fileDirname}",
+                    "env": {
+                        "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                    }
+                }
             }
         }
     ]

@@ -1,6 +1,6 @@
 
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifndef ONLINE_JUDGE
@@ -68,25 +68,39 @@ bool testcase =          0                ;
 
 
 void solve()
-{   
-   int n, m; cin >> n >> m; 
-   vi a(n); 
-   vector<pair<int, int>> b(m); 
-   for(auto &x: a)
-   {
-    cin >> x; 
-   }
-   for(int i = 0; i<m; i++)
-   {
-    int a; cin >> a; 
-    b[i].first = a; 
-    b[i].second = i; 
-   }
+{
+ int n; cin >> n; 
+ vector<int> v1(n); 
 
-   sort(a.begin(), a.end()); 
-   stable_sort(b.begin(), b.end(), comp); 
-   
- 
+// cout << n << endl; 
+ for(auto &x: v1)
+ {
+    cin >> x; 
+ }
+
+ int a , b, c; 
+ cin >> a >> b >> c; 
+ vector<int> v2; 
+ for(int i = 0; i<n; i++)
+ {
+   if(i+1 !=a ) { v2.push_back(v1[i]); }
+ }
+
+ vector<int> v3; 
+
+ for(int i = 0; i<n-1; i++)
+ {
+   if(i+1 >=b && i+1 < c) continue; 
+   v3.push_back(v2[i]); 
+ }
+
+ cout << v3.size() << endl; 
+ for(int i = 0; i<v3.size(); i++)
+
+ {
+   cout << v3[i] << " "; 
+ }
+
 }
 
 

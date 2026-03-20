@@ -1,6 +1,6 @@
 
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifndef ONLINE_JUDGE
@@ -68,25 +68,31 @@ bool testcase =          0                ;
 
 
 void solve()
-{   
-   int n, m; cin >> n >> m; 
-   vi a(n); 
-   vector<pair<int, int>> b(m); 
-   for(auto &x: a)
-   {
-    cin >> x; 
-   }
-   for(int i = 0; i<m; i++)
-   {
-    int a; cin >> a; 
-    b[i].first = a; 
-    b[i].second = i; 
-   }
+{
+    int n;
+    cin >> n;
+    vector<int> v1(n);
 
-   sort(a.begin(), a.end()); 
-   stable_sort(b.begin(), b.end(), comp); 
-   
- 
+    for (auto &x : v1)
+    {
+        cin >> x;
+    }
+
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    // Step 1: remove the a-th element from the original array.
+    v1.erase(v1.begin() + (a - 1));
+
+    // Step 2: in the resulting array, remove elements from b to c inclusive.
+    v1.erase(v1.begin() + (b - 1), v1.begin() + c-1);
+
+    cout << v1.size() << '\n';
+    for (int x : v1)
+    {
+        cout << x << ' ';
+    }
+    cout << '\n';
 }
 
 
