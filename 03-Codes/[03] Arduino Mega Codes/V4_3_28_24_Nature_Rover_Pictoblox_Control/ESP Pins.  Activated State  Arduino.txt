@@ -1,6 +1,0 @@
-ESP Pins.  Activated State  ArduinoPin    Action
----------  ---------------  ----------    ------
-0,2            Low                    Forward
-0,4            Low                    Backward
-0,17           Low                    Left
-0,16           Low                    Right
