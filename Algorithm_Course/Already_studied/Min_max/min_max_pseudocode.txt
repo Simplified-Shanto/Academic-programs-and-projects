@@ -1,0 +1,38 @@
+FIND_MIN_MAX(array, leftIndex, rightIndex):
+
+    // One element is both the minimum and maximum.
+    if leftIndex == rightIndex:
+        return (array[leftIndex], array[leftIndex])
+
+    // Two elements need only one comparison.
+    if leftIndex + 1 == rightIndex:
+        if array[leftIndex] < array[rightIndex]:
+            return (array[leftIndex], array[rightIndex])
+        else:
+            return (array[rightIndex], array[leftIndex])
+
+    middleIndex = (leftIndex + rightIndex) / 2
+
+    (leftMinimum, leftMaximum) =
+        FIND_MIN_MAX(array, leftIndex, middleIndex)
+
+    (rightMinimum, rightMaximum) =
+        FIND_MIN_MAX(array, middleIndex + 1, rightIndex)
+
+    overallMinimum = minimum(leftMinimum, rightMinimum)
+    overallMaximum = maximum(leftMaximum, rightMaximum)
+
+    return (overallMinimum, overallMaximum)
+
+
+Call:
+    FIND_MIN_MAX(array, 0, array.length - 1)
+
+
+Notes:
+- Every recursive call returns a pair: (minimum, maximum).
+- Split the current range into two halves, solve both halves, then compare
+  their two minimum values and their two maximum values.
+- Time complexity: O(n).
+- Space complexity: O(log n) for the recursive call stack.
+- It uses about 3n/2 - 2 comparisons when the subproblems split evenly.

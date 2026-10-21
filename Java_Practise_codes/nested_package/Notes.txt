@@ -1,0 +1,14 @@
+COMPILATION: javac can normally find the required source files from the matching direcotory structure and compile the dependencies too. 
+
+so doing javac Main.java will compile everything 
+
+To compile the entire stuff at a time use: 
+
+javac $(find . -name "*.java")
+
+or 
+
+javac Main.java \
+      prepsmith/users/Student.java \
+      prepsmith/learning/Learner.java \
+      prepsmith/learning/VocabularyStudent.java

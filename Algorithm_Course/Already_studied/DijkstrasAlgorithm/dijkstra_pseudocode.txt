@@ -1,0 +1,29 @@
+DIJKSTRA(graph, source):
+
+    for every vertex v:
+        distance[v] = infinity
+
+    distance[source] = 0
+    push (0, source) into minPriorityQueue
+
+    while minPriorityQueue is not empty:
+        (currentDistance, currentVertex) = extract minimum
+
+        if currentDistance > distance[currentVertex]:
+            continue
+
+        for every edge (currentVertex, neighbour, edgeWeight):
+            candidateDistance = currentDistance + edgeWeight
+
+            if candidateDistance < distance[neighbour]:
+                distance[neighbour] = candidateDistance
+                push (candidateDistance, neighbour) into minPriorityQueue
+
+
+Notes:
+- "Relaxing" an edge means checking whether the current vertex gives a
+  shorter route to its neighbour.
+- The priority queue always extracts the smallest currently known distance.
+- Edge weights must be non-negative.
+- Time complexity with an adjacency list and min-priority queue:
+  O((V + E) log V).
